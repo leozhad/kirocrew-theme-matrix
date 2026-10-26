@@ -1,0 +1,56 @@
+{
+  "slug": "leozh-matrix",
+  "name": "Matrix",
+  "emoji": "💊",
+  "level": 2,
+  "formatVersion": 1,
+  "fonts": [
+    {
+      "family": "Courier Prime",
+      "file": "courierprime-regular.ttf",
+      "weight": 400,
+      "role": "sans"
+    },
+    {
+      "family": "Courier Prime",
+      "file": "courierprime-regular.ttf",
+      "weight": 500,
+      "role": "sans"
+    },
+    {
+      "family": "Courier Prime",
+      "file": "courierprime-bold.ttf",
+      "weight": 600,
+      "role": "sans"
+    },
+    {
+      "family": "Courier Prime",
+      "file": "courierprime-bold.ttf",
+      "weight": 700,
+      "role": "sans"
+    },
+    {
+      "family": "Courier Prime",
+      "file": "courierprime-regular.ttf",
+      "weight": 400,
+      "role": "mono"
+    },
+    {
+      "family": "Courier Prime",
+      "file": "courierprime-bold.ttf",
+      "weight": 700,
+      "role": "mono"
+    }
+  ],
+  "overlays": [
+    {
+      "id": "rain",
+      "src": "overlays/rain.html",
+      "position": "fullscreen",
+      "zIndex": 44,
+      "pointerEvents": true,
+      "animation": "continuous",
+      "trigger": "idle-900s"
+    }
+  ]
+}
