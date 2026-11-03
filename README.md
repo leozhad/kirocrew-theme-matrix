@@ -41,7 +41,9 @@ To update, install the same URL again.
 
 ## How close it is to the film
 
-Every film number was measured from 4K UHD frames, using the median of lit pixels. The 4K UHD color timing is close to the 1999 theatrical release. The 2008 Blu-ray added a stronger green tint.
+Colors, sizes and lit area were measured from 4K UHD frames, using the median of lit pixels. The 4K UHD color timing is close to the 1999 theatrical release. The 2008 Blu-ray added a stronger green tint.
+
+The rain's motion was measured from the film's opening titles at its native 24 frames per second. The only copy reachable was a low-resolution fan upload (544 × 360), so the trail and flicker figures are rougher than the speed and stepping figures. The theme's motion figures come from the screensaver's own rendered frames, read the same way.
 
 | Element | Film | Theme |
 |---|---|---|
@@ -49,11 +51,17 @@ Every film number was measured from 4K UHD frames, using the median of lit pixel
 | Block cursor | `#B2FFFE`, 1.17:1 tall (opening frame) | same color and shape |
 | Rain glyph ink, at 1280 px wide | 20 × 28 px | 20 × 28 px |
 | Rain row pitch | 34 px | 34 px |
-| Rain screen area lit | 20.7%–24.7% | 22%–24% |
-| White lead glyphs, share of lit area | 1.7%–1.8% | 1.6%–2.5% |
+| Rain screen area lit | 20.7%–24.7% | 21%–23% |
+| White lead glyphs, share of lit area | 1.7%–1.8% | 1.8% on average |
 | Rain hue | 154° | 155° |
 | Lead glyph | cool white, `#EBF6FB` | `#ECF8FD` |
 | Typeface | Courier-style slab mono | Courier Prime |
+| Rain frame rate | 24 fps | 24 fps (on a 60 Hz screen, frames alternate 3 and 2 refreshes, as film does on TV) |
+| Drop head speed | about 22 rows/s median (10–36) | about 25 rows/s median (13–33) |
+| Stepping | whole cells per film frame: one row most often, none on 24%–41% of frames, sometimes two | one row on 65%–71% of frames, none on 17%–21%, two on 8%–13% |
+| Trail length | 40% run off the top of the picture; the rest median 3.8 rows | 35%–45% run off the top; the rest median 3–5 rows |
+| Drops per column at once | 1.4–2.3 | 2.0–2.4 |
+| Glyph flicker | 0.7–1.9 changes per second per lit glyph | 1.1–1.2 |
 
 The rain follows the film's rules as documented by [Rezmason/matrix](https://github.com/Rezmason/matrix):
 
