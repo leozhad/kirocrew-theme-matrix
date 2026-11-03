@@ -6,6 +6,7 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 |---|---|
 | This one | The full pack (Level 2): colors, fonts, cursor, and the idle screensaver |
 | [kirocrew-theme-matrix-quiet](https://github.com/leozhad/kirocrew-theme-matrix-quiet) | The same pack without the screensaver (Level 1) |
+| [kirocrew-theme-matrix-ambient](https://github.com/leozhad/kirocrew-theme-matrix-ambient) | The same pack with dim digital rain behind the chat all the time, and no screensaver (Level 2). Needs Kiro Crew 0.11.1 or newer |
 
 | Part | What it does |
 |---|---|
@@ -30,7 +31,7 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 2. Under **Install Theme**, choose **GitHub** and paste `https://github.com/leozhad/kirocrew-theme-matrix`.
 3. Install, then pick **💊 Matrix** in the Theme list.
 
-For the version without the screensaver, use `https://github.com/leozhad/kirocrew-theme-matrix-quiet` instead.
+For the version without the screensaver, use `https://github.com/leozhad/kirocrew-theme-matrix-quiet` instead. For rain behind the chat all the time, use `https://github.com/leozhad/kirocrew-theme-matrix-ambient`.
 
 Choosing the full pack turns the screensaver on without asking. It does not run when the OS is set to reduce motion.
 
