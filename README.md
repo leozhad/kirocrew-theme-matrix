@@ -5,8 +5,8 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 | Repo | What it is |
 |---|---|
 | This one | The full pack (Level 2): colors, fonts, cursor, and the idle screensaver |
-| [kirocrew-theme-matrix-quiet](https://github.com/leozhad/kirocrew-theme-matrix-quiet) | The same pack without the screensaver (Level 1) |
 | [kirocrew-theme-matrix-ambient](https://github.com/leozhad/kirocrew-theme-matrix-ambient) | The same pack with dim digital rain behind the chat all the time, and no screensaver (Level 2). Needs Kiro Crew 0.11.1 or newer |
+| [kirocrew-theme-matrix-quiet](https://github.com/leozhad/kirocrew-theme-matrix-quiet) | Retired on Nov 17, 2026 and archived. For the same look, use this pack with Settings → Display → Theme → Experience → Overlays turned off |
 
 | Part | What it does |
 |---|---|
@@ -31,9 +31,9 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 2. Under **Install Theme**, choose **GitHub** and paste `https://github.com/leozhad/kirocrew-theme-matrix`.
 3. Install, then pick **💊 Matrix** in the Theme list.
 
-For the version without the screensaver, use `https://github.com/leozhad/kirocrew-theme-matrix-quiet` instead. For rain behind the chat all the time, use `https://github.com/leozhad/kirocrew-theme-matrix-ambient`.
+For rain behind the chat all the time, use `https://github.com/leozhad/kirocrew-theme-matrix-ambient` instead.
 
-Choosing the full pack turns the screensaver on without asking. It does not run when the OS is set to reduce motion. On Kiro Crew 0.12.0 or newer you can turn it off under Settings → Display → Theme → Experience → Overlays.
+Choosing the full pack turns the screensaver on without asking. It does not run when the OS is set to reduce motion. To keep the colors without the screensaver, turn off Settings → Display → Theme → Experience → Overlays (Kiro Crew 0.12.0 or newer).
 
 Courier Prime feeds both the Sans and Mono font roles. To keep your OS font, pick System under Settings → Display → Font Family.
 
@@ -89,7 +89,7 @@ The rain follows the film's rules as documented by [Rezmason/matrix](https://git
 
 - **Panels.** The nav rail, session list, chat header and top bar paint above theme overlays, so the screensaver shows only behind the chat area. Thin slivers of rain show in the gaps between panels.
 - **Fixed colors.** The Settings section icon tiles and the glass search bar keep fixed colors.
-- **Consent.** Choosing the full pack starts the screensaver without asking, because the dashboard asks only for packs with audio or a persona. On Kiro Crew 0.12.0 or newer, turn it off under Settings → Display → Theme → Experience → Overlays, or use the quiet pack.
+- **Consent.** Choosing the full pack starts the screensaver without asking, because the dashboard asks only for packs with audio or a persona. On Kiro Crew 0.12.0 or newer, turn it off under Settings → Display → Theme → Experience → Overlays.
 - **Idle timer.** On Kiro Crew 0.11.x only key presses and clicks reset the timer. From 0.12.0, scrolling and keys typed in the built-in Terminal reset it too.
 - **Reduced motion.** The screensaver does not run when the OS asks for reduced motion. On Kiro Crew 0.12.0 or newer the thinking cursor holds still too. Older versions keep it blinking, because browsers do not pass that setting to SVG images.
 
