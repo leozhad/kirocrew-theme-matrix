@@ -1,11 +1,11 @@
 # Kiro Crew theme: Matrix
 
-An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack modeled on the computer screens in *The Matrix* (1999).
+An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack modeled on the computer screens in *The Matrix* (1999). Needs Kiro Crew 0.13.0 or newer.
 
 | Repo | What it is |
 |---|---|
-| This one | The full pack (Level 2): colors, fonts, cursor, and the idle screensaver |
-| [kirocrew-theme-matrix-ambient](https://github.com/leozhad/kirocrew-theme-matrix-ambient) | The same pack with dim digital rain behind the chat all the time, and no screensaver (Level 2). Needs Kiro Crew 0.11.1 or newer |
+| This one | The full pack (Level 2): colors, fonts, cursor, the idle screensaver and the desktop splash |
+| [kirocrew-theme-matrix-ambient](https://github.com/leozhad/kirocrew-theme-matrix-ambient) | The same pack with dim digital rain behind the chat all the time, and no screensaver (Level 2) |
 | [kirocrew-theme-matrix-quiet](https://github.com/leozhad/kirocrew-theme-matrix-quiet) | Retired on Nov 17, 2026 and archived. For the same look, use this pack with Settings → Display → Theme → Experience → Overlays turned off |
 
 | Part | What it does |
@@ -14,6 +14,7 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 | Light mode | The Construct (the white loading program): neutral white with green ink |
 | Thinking indicator | A blinking block cursor |
 | Screensaver | After 15 min with no key press or click, it types "Wake up, Neo...", "The Matrix has you...", "Follow the white rabbit.", then shows "Knock, knock, Neo." and starts the digital rain. Press Shift or click to dismiss. The click does not reach the app. It sleeps after 30 min. |
+| Desktop splash | While the desktop app starts its gateway: the digital rain with "Wake up, Neo..." and the blinking block cursor |
 
 ## Screenshots
 
@@ -25,6 +26,10 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 |---|---|
 | ![Screensaver typing "Wake up, Neo..." with a block cursor](.github/screenshots/wake-up.png) | ![Screensaver showing the green digital rain behind the side panels](.github/screenshots/rain.jpg) |
 
+| Desktop splash (dark mode) |
+|---|
+| ![The desktop app's boot screen: a black screen with digital rain and "Wake up, Neo..." on the pale cyan accent, "Starting gateway…" below](.github/screenshots/splash.jpg) |
+
 ## Install
 
 1. Open Settings → Display → Theme.
@@ -33,7 +38,7 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 
 For rain behind the chat all the time, use `https://github.com/leozhad/kirocrew-theme-matrix-ambient` instead.
 
-Choosing the full pack turns the screensaver on without asking. It does not run when the OS is set to reduce motion. To keep the colors without the screensaver, turn off Settings → Display → Theme → Experience → Overlays (Kiro Crew 0.12.0 or newer).
+Choosing the full pack turns the screensaver on without asking. It does not run when the OS is set to reduce motion. To keep the colors without the screensaver, turn off Settings → Display → Theme → Experience → Overlays.
 
 Courier Prime feeds both the Sans and Mono font roles. To keep your OS font, pick System under Settings → Display → Font Family.
 
@@ -41,11 +46,19 @@ To update, install the same URL again.
 
 ### From a .zip file
 
-On Kiro Crew 0.12.0 or newer you can also install from a `.zip`, for example from a phone or another browser that is not on the gateway's machine:
+You can also install from a `.zip`, for example from a phone or another browser that is not on the gateway's machine:
 
 1. On this page, choose **Code → Download ZIP**.
 2. Open Settings → Display → Theme.
 3. Under **Install Theme**, set **Theme source** to **Zip file**, choose the downloaded `.zip` and install.
+
+## Desktop splash
+
+While the Kiro Crew desktop app starts its gateway, it shows the pack's `branding/splash.svg`: Neo's screen, black with the digital rain, "Wake up, Neo..." in Courier Prime Bold and the film's block cursor, blinking.
+
+- **Where.** Only the desktop app shows it, on its own backdrop, which follows the theme accent: pale cyan-white in dark mode, green in light mode.
+- **When.** The app keeps the art the dashboard last reported, so it shows from the next launch after you pick the theme.
+- **Motion.** Glyphs sit in a fixed grid, drops are light passing down a column, and heads jump whole cells at 24 frames a second. Under reduced motion it holds one still frame.
 
 ## How close it is to the film
 
@@ -83,15 +96,15 @@ The rain follows the film's rules as documented by [Rezmason/matrix](https://git
 - **Status colors.** The film's screens use one color, but the UI needs status colors. `--danger` is red-pill red, `--info` is blue-pill blue, `--warn` is amber.
 - **Body weight.** Body text uses Courier Prime Regular so that bold emphasis still shows. The film's single-weight terminal text is closer to Bold, which the screensaver uses.
 - **Light-mode code.** Code keeps its syntax colors. A one-green filter on white drops token contrast to 2.4:1.
-- **Diffs and file views.** The one-green filter reaches only fenced code blocks; diffs and file views have no theme hook. On Kiro Crew 0.13.0 or newer the pack picks their syntax colors: `github-dark-default` in dark mode (comments, keywords, strings, functions, numbers and types all at 6.8:1 or more over black) and `light-plus` in light mode (green comments; the same token kinds all at 4.5:1 or more over white). Older versions ignore the setting and keep the stock scheme.
+- **Diffs and file views.** The one-green filter reaches only fenced code blocks; diffs and file views have no theme hook, so the pack picks their syntax colors: `github-dark-default` in dark mode (comments, keywords, strings, functions, numbers and types all at 6.8:1 or more over black) and `light-plus` in light mode (green comments; the same token kinds all at 4.5:1 or more over white).
 
 ## What a pack cannot change
 
 - **Panels.** The nav rail, session list, chat header and top bar paint above theme overlays, so the screensaver shows only behind the chat area. Thin slivers of rain show in the gaps between panels.
 - **Fixed colors.** The Settings section icon tiles and the glass search bar keep fixed colors.
-- **Consent.** Choosing the full pack starts the screensaver without asking, because the dashboard asks only for packs with audio or a persona. On Kiro Crew 0.12.0 or newer, turn it off under Settings → Display → Theme → Experience → Overlays.
-- **Idle timer.** On Kiro Crew 0.11.x only key presses and clicks reset the timer. From 0.12.0, scrolling and keys typed in the built-in Terminal reset it too.
-- **Reduced motion.** The screensaver does not run when the OS asks for reduced motion. On Kiro Crew 0.12.0 or newer the thinking cursor holds still too. Older versions keep it blinking, because browsers do not pass that setting to SVG images.
+- **Consent.** Choosing the full pack starts the screensaver without asking, because the dashboard asks only for packs with audio or a persona. Turn it off under Settings → Display → Theme → Experience → Overlays.
+- **Idle timer.** Key presses, clicks, scrolling and keys typed in the built-in Terminal reset the timer.
+- **Reduced motion.** The screensaver does not run when the OS asks for reduced motion, and the thinking cursor holds still.
 
 ## Credits and licenses
 
