@@ -4,8 +4,8 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 
 | Repo | What it is |
 |---|---|
-| This one | The full pack (Level 2): colors, fonts, cursor, the idle screensaver and the desktop splash |
-| [kirocrew-theme-matrix-ambient](https://github.com/leozhad/kirocrew-theme-matrix-ambient) | The same pack with dim digital rain behind the chat all the time, and no screensaver (Level 2) |
+| This one | The full pack (Level 2): colors, fonts, cursor, welcome mark, sounds, the idle screensaver and the desktop splash |
+| [kirocrew-theme-matrix-ambient](https://github.com/leozhad/kirocrew-theme-matrix-ambient) | The same pack, sounds included, with dim digital rain behind the chat all the time, and no screensaver (Level 2) |
 | [kirocrew-theme-matrix-quiet](https://github.com/leozhad/kirocrew-theme-matrix-quiet) | Retired on Nov 17, 2026 and archived. For the same look, use this pack with Settings → Display → Theme → Experience → Overlays turned off |
 
 | Part | What it does |
@@ -13,7 +13,10 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 | Dark mode | Neo's terminal: black CRT, green phosphor text with glow, Courier type, the film's block cursor color, code blocks in one green |
 | Light mode | The Construct (the white loading program): neutral white with green ink |
 | Thinking indicator | A blinking block cursor |
-| Screensaver | After 15 min with no key press or click, it types "Wake up, Neo...", "The Matrix has you...", "Follow the white rabbit.", then shows "Knock, knock, Neo." and starts the digital rain. Press Shift or click to dismiss. The click does not reach the app. It sleeps after 30 min. |
+| Welcome mark | The red pill and the blue pill, on a new chat's welcome screen |
+| Sounds | Original sounds inspired by the films: a jack-in when you pick the theme, an unplug when you leave it, falling code for a notification, an old phone ringing when an approval waits for you ([details](#sounds)) |
+| Terminal | The built-in Terminal selects text in phosphor green |
+| Screensaver | After 15 min with no input (a key, click, scroll or touch), it types "Wake up, Neo...", "The Matrix has you...", "Follow the white rabbit.", then shows "Knock, knock, Neo." and starts the digital rain. Press Shift or click to dismiss. The click does not reach the app. It sleeps after 30 min. |
 | Desktop splash | While the desktop app starts its gateway: the digital rain with "Wake up, Neo..." and the blinking block cursor |
 
 ## Screenshots
@@ -30,6 +33,10 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 |---|
 | ![The desktop app's boot screen: a black screen with digital rain and "Wake up, Neo..." on the pale cyan accent, "Starting gateway…" below](.github/screenshots/splash.jpg) |
 
+| Welcome mark: a new chat | First pick: Kiro Crew asks about Sounds and Overlays |
+|---|---|
+| ![A new chat's welcome screen with a red pill and a blue pill above the greeting](.github/screenshots/welcome.jpg) | ![The dialog "Enable Matrix experience?" with Sounds and Overlays checkboxes](.github/screenshots/consent.jpg) |
+
 ## Install
 
 1. Open Settings → Display → Theme.
@@ -38,7 +45,7 @@ An unofficial [Kiro Crew](https://github.com/kirodotdev/KiroCrew) theme pack mod
 
 For rain behind the chat all the time, use `https://github.com/leozhad/kirocrew-theme-matrix-ambient` instead.
 
-Choosing the full pack turns the screensaver on without asking. It does not run when the OS is set to reduce motion. To keep the colors without the screensaver, turn off Settings → Display → Theme → Experience → Overlays.
+The first time you choose the theme, Kiro Crew asks which parts to turn on: Sounds and Overlays (the screensaver). Change them later under Settings → Display → Theme → Experience. The screensaver and the sounds do not run when the OS is set to reduce motion.
 
 Courier Prime feeds both the Sans and Mono font roles. To keep your OS font, pick System under Settings → Display → Font Family.
 
@@ -51,6 +58,32 @@ You can also install from a `.zip`, for example from a phone or another browser 
 1. On this page, choose **Code → Download ZIP**.
 2. Open Settings → Display → Theme.
 3. Under **Install Theme**, set **Theme source** to **Zip file**, choose the downloaded `.zip` and install.
+
+## Sounds
+
+The pack ships four short sounds in `audio/`. They are original: a script made them from sine waves, filtered noise and envelopes, with a fixed seed. They hold no audio from the films. They are made to recall the film's moments.
+
+| When | File | Sound |
+|---|---|---|
+| You pick the theme (`activate`) | `jack-in.wav`, 1.6 s | The headjack seating with a metallic tick and a thump, an electric whine that climbs, then code shimmering in |
+| You switch to another theme (`deactivate`) | `unplug.wav`, 0.8 s | The whine falling away and a soft pop |
+| A notification (`notification`) | `rain.wav`, 0.95 s | Falling code: three columns of blips that step down in pitch, one step per film frame (1/24 s) |
+| An approval waits for you (`category:approval`) | `phone.wav`, 1.9 s | One ring of an old two-bell landline: the operator calling |
+
+- **Quiet.** Peaks sit at -6 dBFS, and the pack plays them at 40%–50% volume. Each stays under Kiro Crew's cap for its trigger (5 s for `activate`, 2 s for the rest).
+- **When they play.** Kiro Crew asks the first time you choose the theme, with one box for Sounds and one for Overlays. Change it later under Settings → Display → Theme → Experience → Sounds. A mute button sits at the bottom right while the theme is active. Sounds never play when the OS is set to reduce motion.
+- **Your settings win.** A notification category you gave its own sound under Settings → Notifications → Per-category sounds keeps that sound, and Mute sounds there silences the theme too.
+
+### Use your own sounds
+
+Kiro Crew plays whatever files the pack's `audio/manifest.json` names, so you can swap in your own for your own install:
+
+1. Download this repo (**Code → Download ZIP**) and unzip it, or clone it, on the machine that runs the Kiro Crew gateway.
+2. Replace any of `audio/jack-in.wav`, `unplug.wav`, `rain.wav` or `phone.wav` with your own file of the same name. Or add a file and point a trigger at it in `audio/manifest.json`. The triggers are `activate`, `deactivate`, `message-sent`, `message-received`, `error`, `notification` and `category:<name>`.
+3. Keep each file `.wav`, `.mp3` or `.ogg`, with a lower-case name of letters, digits and dashes, under 512 KB, and under the trigger's time cap (5 s for `activate`, 3 s for `error`, 1 s for the two message triggers, 2 s for the rest). Install checks the file's first bytes, so a renamed file of another type is refused.
+4. Install that folder through Settings → Display → Theme → Install Theme → Local folder. Install validates it; a refusal names what to change.
+
+Keep audio you do not own, such as clips from the films, out of any repo you push. This repo's `.gitignore` ignores `local-audio/` and `audio-film/` folders for that reason.
 
 ## Desktop splash
 
@@ -102,15 +135,15 @@ The rain follows the film's rules as documented by [Rezmason/matrix](https://git
 
 - **Panels.** The nav rail, session list, chat header and top bar paint above theme overlays, so the screensaver shows only behind the chat area. Thin slivers of rain show in the gaps between panels.
 - **Fixed colors.** The Settings section icon tiles and the glass search bar keep fixed colors.
-- **Consent.** Choosing the full pack starts the screensaver without asking, because the dashboard asks only for packs with audio or a persona. Turn it off under Settings → Display → Theme → Experience → Overlays.
+- **Consent.** Because the pack ships sounds, Kiro Crew asks the first time you choose it, with one box per part: Sounds and Overlays (the screensaver). Change either later under Settings → Display → Theme → Experience. A part a reinstall adds stays off until you turn it on there.
 - **Idle timer.** Key presses, clicks, scrolling and keys typed in the built-in Terminal reset the timer.
-- **Reduced motion.** The screensaver does not run when the OS asks for reduced motion, and the thinking cursor holds still.
+- **Reduced motion.** The screensaver does not run when the OS asks for reduced motion, the thinking cursor holds still, and no sound plays.
 
 ## Credits and licenses
 
 See [`LICENSE.txt`](LICENSE.txt):
 
-- The pack is MIT.
+- The pack is MIT, including its sounds, which are synthesized.
 - Rezmason's `Matrix-Code.ttf` glyph art, embedded in `overlays/rain.html`, is MIT. He recovered the glyph shapes from an official promo SWF, and Warner Bros. may hold rights in that original art.
 - Courier Prime is under SIL OFL 1.1.
 
